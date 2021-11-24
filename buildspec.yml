@@ -7,6 +7,8 @@ phases:
     commands:
       - pip install --upgrade awscli
       - python -m unittest discover tests
+reports:
+  arn:aws:codebuild:ap-south-1:481782230560:report-group/UnitTest
 artifacts:
   files:
     - '**/*'
