@@ -8,7 +8,11 @@ phases:
       - pip install --upgrade awscli
       - python -m unittest discover tests
 reports:
-  arn:aws:codebuild:ap-south-1:481782230560:report-group/UnitTest
+  pytest_reports:
+    files:
+      - unittest discover tests
+    base-directory: arn:aws:codebuild:ap-south-1:481782230560:report-group/UnitTest
+    file-format: JUNITXML
 artifacts:
   files:
     - '**/*'
